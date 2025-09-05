@@ -1,10 +1,10 @@
 const H = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20aria-hidden='true'%20role='img'%20class='iconify%20iconify--logos'%20width='32'%20height='32'%20preserveAspectRatio='xMidYMid%20meet'%20viewBox='0%200%20256%20256'%3e%3cpath%20fill='%23F7DF1E'%20d='M0%200h256v256H0V0Z'%3e%3c/path%3e%3cpath%20d='m67.312%20213.932l19.59-11.856c3.78%206.701%207.218%2012.371%2015.465%2012.371c7.905%200%2012.89-3.092%2012.89-15.12v-81.798h24.057v82.138c0%2024.917-14.606%2036.259-35.916%2036.259c-19.245%200-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157%208.421%2011.859%2014.607%2023.715%2014.607c9.969%200%2016.325-4.984%2016.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044%2013.747-31.792%2035.228-31.792c15.294%200%2026.292%205.328%2034.196%2019.247l-18.732%2012.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046%200-11.514%204.468-11.514%2010.31c0%207.217%204.468%2010.14%2014.778%2014.608l6.014%202.577c20.45%208.765%2031.963%2017.7%2031.963%2037.804c0%2021.654-17.012%2033.51-39.867%2033.51c-22.339%200-36.774-10.654-43.819-24.574'%3e%3c/path%3e%3c/svg%3e", q = "/vite.svg";
-function R(b) {
+function R(f) {
   let t = 0;
   const i = (e) => {
-    t = e, b.innerHTML = `count is ${t}`;
+    t = e, f.innerHTML = `count is ${t}`;
   };
-  b.addEventListener("click", () => i(t + 1)), i(0);
+  f.addEventListener("click", () => i(t + 1)), i(0);
 }
 let F = class extends HTMLElement {
   constructor() {
@@ -171,14 +171,14 @@ let F = class extends HTMLElement {
     `;
     const c = t.querySelector(".toggle"), m = t.querySelector(".menu"), p = t.querySelector(".close-btn"), u = t.querySelector('slot[name="links"]');
     c.addEventListener("click", () => m.classList.toggle("open")), p.addEventListener("click", () => m.classList.remove("open")), u.addEventListener("slotchange", () => {
-      const f = u.assignedElements().filter((x) => x.tagName.toLowerCase() === "a");
-      f.forEach((x) => {
-        x.addEventListener("click", function() {
-          f.forEach((y) => y.classList.remove("active")), this.classList.add("active"), m.classList.remove("open");
+      const x = u.assignedElements().filter((b) => b.tagName.toLowerCase() === "a");
+      x.forEach((b) => {
+        b.addEventListener("click", function() {
+          x.forEach((y) => y.classList.remove("active")), this.classList.add("active"), m.classList.remove("open");
         });
       });
-    }), document.addEventListener("keydown", (f) => {
-      f.key === "Escape" && m.classList.remove("open");
+    }), document.addEventListener("keydown", (x) => {
+      x.key === "Escape" && m.classList.remove("open");
     });
   }
 };
@@ -318,7 +318,7 @@ class j extends HTMLElement {
     const c = t.querySelector(".toggle"), m = t.querySelector(".menu");
     c.addEventListener("click", () => m.classList.toggle("open")), m.addEventListener("click", (p) => {
       const u = this.querySelectorAll('a[slot="links"]');
-      p.target.tagName.toLowerCase() === "a" && (u.forEach((f) => f.classList.remove("active")), p.target.classList.add("active"), m.classList.remove("open"));
+      p.target.tagName.toLowerCase() === "a" && (u.forEach((x) => x.classList.remove("active")), p.target.classList.add("active"), m.classList.remove("open"));
     }), document.addEventListener("keydown", (p) => {
       p.key === "Escape" && m.classList.remove("open");
     });
@@ -1044,27 +1044,27 @@ class _ extends HTMLElement {
     this.render();
   }
   render() {
-    const t = this.shadowRoot, i = this.getAttribute("fields")?.split(",") || ["email", "password"], e = this.getAttribute("form-label") || "Log In ", o = this.getAttribute("field-types")?.split(",") || [], s = this.getAttribute("options")?.split(";") || [], r = this.getAttribute("submit-text") || "Sign In", a = this.getAttribute("bg-color") || "#ffffff", n = this.getAttribute("text-color") || "#333333", d = this.getAttribute("input-bg") || "#f8f9fa", g = this.getAttribute("input-border") || "#e0e0e0", h = this.getAttribute("input-border-width") || "1px", l = this.getAttribute("input-border-style") || "solid", c = this.getAttribute("border-radius") || "8px", m = this.getAttribute("padding") || "2rem", p = this.getAttribute("input-height") || "3rem", u = this.getAttribute("textarea-height") || "100px", f = this.getAttribute("label-transition") || "all 0.3s ease", x = this.getAttribute("enable-focus") !== "false", y = this.getAttribute("font-size") || "1rem", w = this.getAttribute("font-family") || "Arial, sans-serif", k = this.getAttribute("label-color") || "#999", A = this.getAttribute("button-font-size") || "1rem", T = i.map((v, S) => {
-      let $ = "text";
-      v.toLowerCase() === "password" && ($ = "password"), v.toLowerCase() === "email" && ($ = "email"), v.toLowerCase() === "date" && ($ = "date"), o[S] && ($ = o[S]);
-      let C = "";
-      return $ === "select" && s[S] && (C = s[S].split(",").map((L) => {
-        const [I, M] = L.split(":");
-        return `<option value="${I || L.trim()}">${M || L.trim()}</option>`;
-      }).join("")), $ === "select" ? `
+    const t = this.shadowRoot, i = this.getAttribute("fields")?.split(",") || ["email", "password"], e = this.getAttribute("form-label") || "Log In ", o = this.getAttribute("field-types")?.split(",") || [], s = this.getAttribute("options")?.split(";") || [], r = this.getAttribute("submit-text") || "Sign In", a = this.getAttribute("bg-color") || "#ffffff", n = this.getAttribute("text-color") || "#333333", d = this.getAttribute("input-bg") || "#f8f9fa", g = this.getAttribute("input-border") || "#e0e0e0", h = this.getAttribute("input-border-width") || "1px", l = this.getAttribute("input-border-style") || "solid", c = this.getAttribute("border-radius") || "8px", m = this.getAttribute("padding") || "2rem", p = this.getAttribute("input-height") || "3rem", u = this.getAttribute("textarea-height") || "100px", x = this.getAttribute("label-transition") || "all 0.3s ease", b = this.getAttribute("enable-focus") !== "false", y = this.getAttribute("font-size") || "1rem", $ = this.getAttribute("font-family") || "Arial, sans-serif", k = this.getAttribute("label-color") || "#999", A = this.getAttribute("button-font-size") || "1rem", C = i.map((v, z) => {
+      let w = "text";
+      v.toLowerCase() === "password" && (w = "password"), v.toLowerCase() === "email" && (w = "email"), v.toLowerCase() === "date" && (w = "date"), o[z] && (w = o[z]);
+      let S = "";
+      return w === "select" && s[z] && (S = s[z].split(",").map((E) => {
+        const [I, M] = E.split(":");
+        return `<option value="${I || E.trim()}">${M || E.trim()}</option>`;
+      }).join("")), w === "select" ? `
             <div class="form-group">
               <select id="${v}" name="${v}" required>
                 <option value="" disabled selected></option>
-                ${C}
+                ${S}
               </select>
               <label for="${v}">${v.charAt(0).toUpperCase() + v.slice(1)}</label>
-            </div>` : $ === "textarea" ? `
+            </div>` : w === "textarea" ? `
             <div class="form-group textarea-group">
               <textarea id="${v}" name="${v}" required placeholder=" "></textarea>
               <label for="${v}">${v.charAt(0).toUpperCase() + v.slice(1)}</label>
             </div>` : `
             <div class="form-group">
-              <input type="${$}" id="${v}" name="${v}" required placeholder=" " />
+              <input type="${w}" id="${v}" name="${v}" required placeholder=" " />
               <label for="${v}">${v.charAt(0).toUpperCase() + v.slice(1)}</label>
             </div>`;
     }).join("");
@@ -1076,7 +1076,7 @@ class _ extends HTMLElement {
           max-width: 400px;
           margin: 0 auto;
           font-size: ${y};
-          font-family: ${w};
+          font-family: ${$};
         }
 
         .form-container {
@@ -1114,7 +1114,7 @@ class _ extends HTMLElement {
           transition: all 0.3s ease;
           box-sizing: border-box;
           color: ${n};
-          font-family: ${w};
+          font-family: ${$};
         }
 
         input, select {
@@ -1129,7 +1129,7 @@ class _ extends HTMLElement {
           min-height: ${u};
         }
 
-      ${x ? `
+      ${b ? `
         input:focus, select:focus, textarea:focus {
           outline: none;
           border-color: ${n};
@@ -1149,7 +1149,7 @@ class _ extends HTMLElement {
           transform: translateY(-50%);
           color: ${k};
           pointer-events: none;
-          transition: ${f};
+          transition: ${x};
           background-color: ${d};
           padding: 0 0.3rem;
         }
@@ -1174,7 +1174,7 @@ class _ extends HTMLElement {
           border: none;
           border-radius: ${c};
           font-size: ${A};
-          font-family: ${w},serif;
+          font-family: ${$},serif;
           cursor: pointer;
           transition: all 0.3s ease;
           margin-top: 1rem;
@@ -1189,7 +1189,7 @@ class _ extends HTMLElement {
       <div class="form-container">
         <slot name="form-title"><h2 class="form-title">${e}</h2></slot>
         <form>
-          ${T}
+          ${C}
           <button type="submit">${r}</button>
         </form>
         <div class="form-footer">
@@ -1197,19 +1197,19 @@ class _ extends HTMLElement {
         </div>
       </div>
     `;
-    const E = t.querySelector("form");
-    E.addEventListener("submit", (v) => {
-      if (v.preventDefault(), E.checkValidity()) {
-        const S = new FormData(E), $ = Object.fromEntries(S.entries());
+    const T = t.querySelector("form");
+    T.addEventListener("submit", (v) => {
+      if (v.preventDefault(), T.checkValidity()) {
+        const z = new FormData(T), w = Object.fromEntries(z.entries());
         this.dispatchEvent(
           new CustomEvent("form-submit", {
-            detail: { data: $ },
+            detail: { data: w },
             bubbles: !0,
             composed: !0
           })
         );
       } else
-        E.reportValidity();
+        T.reportValidity();
     });
   }
 }
@@ -1272,7 +1272,6 @@ class W extends HTMLElement {
             }
             
             .slider {
-            
                 display: flex;
                 width: 100%;
                 margin: auto;
@@ -1305,6 +1304,13 @@ class W extends HTMLElement {
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                 cursor: pointer;
             }
+            
+            ::slotted([slot="slider-item"]) img {
+                border-radius: ${l};
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
 
             /* Image zoom modal styles */
             .modal {
@@ -1318,14 +1324,23 @@ class W extends HTMLElement {
                 z-index: 1000;
                 justify-content: center;
                 align-items: center;
+                overflow: hidden;
             }
-            
+
             .modal-content {
-                max-width: 90%;
-                max-height: 90%;
+                max-width: 95%;
+                max-height: 95%;
                 object-fit: contain;
+                transform: scale(0.7);
+                opacity: 0;
+                transition: transform 0.3s ease, opacity 0.3s ease;
             }
-            
+
+            .modal.show .modal-content {
+                transform: scale(1);
+                opacity: 1;
+            }
+
             .close {
                 position: absolute;
                 top: 20px;
@@ -1366,7 +1381,6 @@ class W extends HTMLElement {
             </div>
         </div>
         
-
         <div class="modal">
             <span class="close">&times;</span>
             <img class="modal-content">
@@ -1378,17 +1392,24 @@ class W extends HTMLElement {
     }), u.addEventListener("click", () => {
       m.scrollBy({ left: c, behavior: "smooth" });
     });
-    const f = t.querySelector(".modal"), x = t.querySelector(".modal-content"), y = t.querySelector(".close");
-    m.addEventListener("click", (w) => {
-      const k = w.target.closest('[slot="slider-item"]');
-      if (k) {
-        const A = k.querySelector("img");
-        A && (f.style.display = "flex", x.src = A.src, x.alt = A.alt || "", document.body.style.overflow = "hidden");
+    const x = t.querySelector('slot[name="slider-item"]');
+    x.addEventListener("slotchange", () => {
+      x.assignedElements().forEach((A) => {
+        const C = A.querySelector("img");
+        C && (C.style.borderRadius = l, C.style.cursor = "pointer");
+      });
+    });
+    const b = t.querySelector(".modal"), y = t.querySelector(".modal-content"), $ = t.querySelector(".close");
+    m.addEventListener("click", (k) => {
+      const A = k.target.closest('[slot="slider-item"]');
+      if (A) {
+        const C = A.querySelector("img");
+        C && (b.style.display = "flex", b.classList.add("show"), y.src = C.src, y.alt = C.alt || "", document.body.style.overflow = "hidden");
       }
-    }), y.addEventListener("click", () => {
-      f.style.display = "none", document.body.style.overflow = "";
-    }), f.addEventListener("click", (w) => {
-      w.target === f && (f.style.display = "none", document.body.style.overflow = "");
+    }), $.addEventListener("click", () => {
+      b.classList.remove("show"), b.style.display = "none", document.body.style.overflow = "";
+    }), b.addEventListener("click", (k) => {
+      k.target === b && (b.classList.remove("show"), b.style.display = "none", document.body.style.overflow = "");
     });
   }
 }
@@ -1588,10 +1609,10 @@ class X extends HTMLElement {
     for (let p = 0; p < c; p++) {
       const u = document.createElement("div");
       u.className = "slide-group";
-      const f = p * s, x = f + s;
-      for (let y = f; y < x && y < l.length; y++) {
-        const w = l[y].cloneNode(!0);
-        u.appendChild(w);
+      const x = p * s, b = x + s;
+      for (let y = x; y < b && y < l.length; y++) {
+        const $ = l[y].cloneNode(!0);
+        u.appendChild($);
       }
       g.appendChild(u);
     }
@@ -1601,8 +1622,8 @@ class X extends HTMLElement {
     }
     const m = (p) => {
       const u = -p * 100;
-      g.style.transform = `translateX(${u}%)`, t.querySelectorAll(".dot").forEach((f, x) => {
-        f.classList.toggle("active", x === p);
+      g.style.transform = `translateX(${u}%)`, t.querySelectorAll(".dot").forEach((x, b) => {
+        x.classList.toggle("active", b === p);
       });
     };
     m(0);
@@ -2070,7 +2091,7 @@ class U extends HTMLElement {
       </style>
 
       <div class="container" id="container">
-        ${i.split(" ").map((x) => `<span class="word">${x}</span>`).join("")}
+        ${i.split(" ").map((b) => `<span class="word">${b}</span>`).join("")}
         <div class="focus-frame" id="frame">
           <span class="corner top-left"></span>
           <span class="corner top-right"></span>
@@ -2082,15 +2103,15 @@ class U extends HTMLElement {
     const h = t.getElementById("container"), l = t.getElementById("frame"), c = Array.from(t.querySelectorAll(".word"));
     let m = 0;
     function p() {
-      const x = c[m], y = x.getBoundingClientRect(), w = h.getBoundingClientRect();
-      l.style.left = `${y.left - w.left}px`, l.style.top = `${y.top - w.top}px`, l.style.width = `${y.width}px`, l.style.height = `${y.height}px`, c.forEach((k) => k.style.filter = `blur(${e}px)`), x.style.filter = "blur(0)", m = (m + 1) % c.length;
+      const b = c[m], y = b.getBoundingClientRect(), $ = h.getBoundingClientRect();
+      l.style.left = `${y.left - $.left}px`, l.style.top = `${y.top - $.top}px`, l.style.width = `${y.width}px`, l.style.height = `${y.height}px`, c.forEach((k) => k.style.filter = `blur(${e}px)`), b.style.filter = "blur(0)", m = (m + 1) % c.length;
     }
     const u = (+o + 1) * 1e3;
-    function f() {
-      p(), setTimeout(f, u);
+    function x() {
+      p(), setTimeout(x, u);
     }
     requestAnimationFrame(() => {
-      p(), f();
+      p(), x();
     });
   }
 }
@@ -2116,26 +2137,26 @@ class J extends HTMLElement {
     document.body.removeChild(m);
     const u = `${r} ${s} ${a}`;
     c.font = u, c.textBaseline = "alphabetic";
-    const f = c.measureText(e), x = f.actualBoundingBoxAscent || p, y = f.actualBoundingBoxDescent || p * 0.2, w = Math.ceil(f.width), k = Math.ceil(x + y);
-    l.width = w, l.height = k, c.font = u, c.fillStyle = o, c.fillText(e, 0, x);
+    const x = c.measureText(e), b = x.actualBoundingBoxAscent || p, y = x.actualBoundingBoxDescent || p * 0.2, $ = Math.ceil(x.width), k = Math.ceil(b + y);
+    l.width = $, l.height = k, c.font = u, c.fillStyle = o, c.fillText(e, 0, b);
     const A = 50;
-    t.width = w + A * 2, t.height = k, i.translate(A, 0);
-    const T = () => {
+    t.width = $ + A * 2, t.height = k, i.translate(A, 0);
+    const C = () => {
       i.clearRect(-A, 0, t.width, t.height);
-      const $ = h ? d : n, C = 30;
-      for (let z = 0; z < k; z++) {
-        const L = Math.floor((Math.random() - 0.5) * C * $);
-        i.drawImage(l, 0, z, w, 1, L, z, w, 1);
+      const w = h ? d : n, S = 30;
+      for (let L = 0; L < k; L++) {
+        const E = Math.floor((Math.random() - 0.5) * S * w);
+        i.drawImage(l, 0, L, $, 1, E, L, $, 1);
       }
-      this.frameId = requestAnimationFrame(T);
+      this.frameId = requestAnimationFrame(C);
     };
-    T();
-    const E = ($, C) => $ >= A && $ <= A + w && C >= 0 && C <= k, v = ($) => {
-      const C = t.getBoundingClientRect(), z = $.clientX - C.left, L = $.clientY - C.top;
-      h = E(z, L);
-    }, S = () => h = !1;
-    g && (t.addEventListener("mousemove", v), t.addEventListener("mouseleave", S), this._cleanup = () => {
-      t.removeEventListener("mousemove", v), t.removeEventListener("mouseleave", S);
+    C();
+    const T = (w, S) => w >= A && w <= A + $ && S >= 0 && S <= k, v = (w) => {
+      const S = t.getBoundingClientRect(), L = w.clientX - S.left, E = w.clientY - S.top;
+      h = T(L, E);
+    }, z = () => h = !1;
+    g && (t.addEventListener("mousemove", v), t.addEventListener("mouseleave", z), this._cleanup = () => {
+      t.removeEventListener("mousemove", v), t.removeEventListener("mouseleave", z);
     });
   }
   cleanupListeners() {
@@ -2272,11 +2293,11 @@ class K extends HTMLElement {
         `;
     const h = t.querySelector(".counter"), l = (p) => p * (2 - p), c = () => {
       if (i === e) return;
-      const p = performance.now(), u = (f) => {
-        let x = Math.min((f - p) / r, 1);
-        x = l(x);
-        const y = i + (e - i) * x;
-        h.textContent = y.toFixed(o), x < 0.3 ? h.style.transform = "scale(1.1)" : h.style.transform = "scale(1)", x < 1 && requestAnimationFrame(u);
+      const p = performance.now(), u = (x) => {
+        let b = Math.min((x - p) / r, 1);
+        b = l(b);
+        const y = i + (e - i) * b;
+        h.textContent = y.toFixed(o), b < 0.3 ? h.style.transform = "scale(1.1)" : h.style.transform = "scale(1)", b < 1 && requestAnimationFrame(u);
       };
       requestAnimationFrame(u);
     }, m = new IntersectionObserver((p) => {
@@ -3578,8 +3599,8 @@ class dt extends HTMLElement {
             p.width,
             p.height
           ), p.style.width = Math.round(this.tileSize * n) + "px", p.style.height = Math.round(this.tileSize * n) + "px";
-          const f = (Math.random() - 0.5) * 200, x = (Math.random() - 0.5) * 200, y = (Math.random() - 0.5) * 90;
-          p.dataset.x = f.toFixed(2), p.dataset.y = x.toFixed(2), p.dataset.r = y.toFixed(2), e.appendChild(p);
+          const x = (Math.random() - 0.5) * 200, b = (Math.random() - 0.5) * 200, y = (Math.random() - 0.5) * 90;
+          p.dataset.x = x.toFixed(2), p.dataset.y = b.toFixed(2), p.dataset.r = y.toFixed(2), e.appendChild(p);
         }
       const h = () => {
         e.querySelectorAll(".tile").forEach((c) => {
