@@ -2417,7 +2417,7 @@
         <slot name="icon"></slot>
         <span>${n}</span>
       </${h}>
-    `}}customElements.define("shinny-btn",nt);class at extends HTMLElement{static get observedAttributes(){return["liquid-color","text-color","href","width","font-size","font-weight","font-family"]}constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.currentLiquidColor=this.getAttribute("liquid-color")||"red",this.render()}render(){const t=this.currentLiquidColor,i=this.getAttribute("text-color")||"white",e=this.getAttribute("width")||"200px",o=this.getAttribute("font-size")||"1.5em",s=this.getAttribute("font-weight")||"bold",r=this.getAttribute("font-family")||"Arial, sans-serif",a=this.getAttribute("href")||"#";this.shadow.innerHTML=`
+    `}}customElements.define("shinny-btn",nt);class at extends HTMLElement{static get observedAttributes(){return["liquid-color","text-color","href","width","font-size","font-weight","font-family"]}constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.currentLiquidColor=this.getAttribute("liquid-color")||"red",this.render()}render(){const t=this.currentLiquidColor,i=this.getAttribute("text-color")||"white",e=this.getAttribute("width")||"200px",o=this.getAttribute("font-size")||"1.5em",s=this.getAttribute("font-weight")||"bold",r=this.getAttribute("font-family")||"Arial, sans-serif",a=this.getAttribute("href")||"#";this.shadowRoot.innerHTML=`
             <style>
                 a {
                     position: relative;
