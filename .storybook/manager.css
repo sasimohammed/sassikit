@@ -1,0 +1,4 @@
+#storybook-explorer-tree .sidebar-header a img {
+    max-height: 30px !important; /* adjust size */
+    width: auto !important;
+}
