@@ -3,10 +3,7 @@
 A lightweight collection of **ready-to-use Web Components** that work seamlessly in **HTML** and **React**.  
 No build tools required — just include the script and start using the components!
 
-## 🎥 Demo Video
-
-Watch the demo here:  
-[![Watch the video]()
+<img width="1892" height="924" alt="image" src="https://github.com/user-attachments/assets/0d397fbd-cfdf-46f3-aeee-6f84d1a93a30" />
 
 
 ---
